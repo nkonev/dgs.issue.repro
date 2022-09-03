@@ -1,0 +1,8 @@
+type Query {
+    car: Car
+}
+
+type Car {
+    id: String
+    model: String
+}
