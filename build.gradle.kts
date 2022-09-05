@@ -13,6 +13,7 @@ java.sourceCompatibility = JavaVersion.VERSION_17
 
 repositories {
 	mavenCentral()
+    mavenLocal()
 }
 
 dependencies {
@@ -20,7 +21,7 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:5.1.1"))
+    implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:5.3.0-SNAPSHOT"))
     implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework:spring-webflux")
