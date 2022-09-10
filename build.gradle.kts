@@ -18,12 +18,15 @@ repositories {
 
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation("org.apache.commons:commons-lang3:3.12.0")
     implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:5.3.0-SNAPSHOT"))
     implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("com.netflix.graphql.dgs:graphql-dgs-subscriptions-websockets-autoconfigure")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework:spring-webflux")
     testImplementation("io.projectreactor.netty:reactor-netty-core")
     testImplementation("io.projectreactor.netty:reactor-netty-http")

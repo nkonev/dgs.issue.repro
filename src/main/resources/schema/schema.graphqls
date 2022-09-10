@@ -6,3 +6,7 @@ type Car {
     id: String
     model: String
 }
+
+type Subscription {
+    cars: Car
+}
