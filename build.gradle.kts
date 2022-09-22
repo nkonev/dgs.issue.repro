@@ -1,10 +1,9 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-	id("org.springframework.boot") version "2.7.3"
-	id("io.spring.dependency-management") version "1.0.13.RELEASE"
-	kotlin("jvm") version "1.6.21"
-	kotlin("plugin.spring") version "1.6.21"
+	id("org.springframework.boot")
+	kotlin("jvm")
+	kotlin("plugin.spring")
 }
 
 group = "name.nkonev.dgs.issue.repro"
@@ -17,11 +16,13 @@ repositories {
 }
 
 dependencies {
+	implementation(platform("org.springframework.boot:spring-boot-dependencies:${project.property("springBootVersion")}"))
+	implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:${project.property("dgsVersion")}"))
+
 	implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation(platform("com.netflix.graphql.dgs:graphql-dgs-platform-dependencies:5.3.0-SNAPSHOT"))
     implementation("com.netflix.graphql.dgs:graphql-dgs-spring-boot-starter")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework:spring-webflux")
